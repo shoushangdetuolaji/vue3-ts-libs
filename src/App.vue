@@ -1,20 +1,28 @@
 <template>
-  <div class="app-container">
-    app
+  <div class="app">
+    <div class="app-container">
+      <input-demo />
+      <br>
+      <a-input placeholder="app" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-
+import InputDemo from './components/Input/demo.vue'
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  components: {
+    InputDemo
+  }
 });
 </script>
 
 <style lang="scss">
 .app-container {
-  color: $assist-color;
+  width: 1000px;
+  margin: 0 auto;
 }
 </style>

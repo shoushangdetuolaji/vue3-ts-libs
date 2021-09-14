@@ -36,5 +36,13 @@
    }
    ```
 
-  
+
+
+## vue3新东西点
+
+组件防止多层attrs
+
+```: f
+inheritAttrs: false 
+```
 

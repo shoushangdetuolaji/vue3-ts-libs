@@ -1,19 +1,40 @@
 # vue-next-libs
 
-## Project setup
-```
-npm install
-```
+> 向会js的云师兄学习的一个库，我是非原创开源精神，只想给自己锻炼，感谢作者
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 技术栈
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- vue3
+- ts
+- scss
+- ant
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## 前期工作
+
+- 个人项目没有eslint规则
+
+- vue-cli 开发 css相关的预处理器
+
+  >  [style-resources-loader](https://github.com/yenshih/style-resources-loader)
+  >
+  > https://cli.vuejs.org/zh/guide/css.html#%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AF%BC%E5%85%A5
+
+  有效解决css变量的引入问题，在vue.config.js配置
+
+  ` vue add style-resources-loader`
+
+   ```js
+   module.exports = {
+     pluginOptions: {
+       'style-resources-loader': {
+         preProcessor: 'scss',
+         patterns: ['./src/assets/styles/variable.scss']
+       }
+     }
+   }
+   ```
+
+  
+

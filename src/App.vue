@@ -12,3 +12,9 @@ export default defineComponent({
   name: 'App'
 });
 </script>
+
+<style lang="scss">
+.app-container {
+  color: $assist-color;
+}
+</style>

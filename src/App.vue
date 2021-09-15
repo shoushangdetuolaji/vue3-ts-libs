@@ -3,7 +3,7 @@
     <div class="app-container">
       <input-demo />
       <br>
-      <a-input placeholder="app" />
+      <form-demo />
     </div>
   </div>
 </template>
@@ -11,11 +11,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import InputDemo from './components/Input/demo.vue'
+import FormDemo from './components/Form/demo.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    InputDemo
+    InputDemo,
+    FormDemo
   }
 });
 </script>

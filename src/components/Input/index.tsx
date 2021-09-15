@@ -1,5 +1,6 @@
-import { defineComponent } from 'vue';
+import { defineComponent, inject } from 'vue';
 import './index.scss';
+import {FormItemContext, FormItemKey} from "@/components/Form/types";
 
 export default defineComponent({
   name: 'AInput',
@@ -18,11 +19,16 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup(props, { emit, attrs }) {
+    const formItemCtx = inject<FormItemContext>(FormItemKey)
     const onInput = (event: Event) => {
       const value = (event.target as HTMLInputElement).value
       if (value !== props.modelValue) {
         emit('update:modelValue', value)
+        formItemCtx?.handlerControlChange(value)
       }
+    }
+    const onBlur = () => {
+      formItemCtx?.handlerControlBlur(props.modelValue)
     }
     return () => {
       return (
@@ -31,7 +37,8 @@ export default defineComponent({
             class="ant-field"
             type={ props.type }
             placeholder={ attrs.placeholder as string }
-            onInput={ onInput}
+            onInput={ onInput }
+            onBlur={ onBlur }
             value={ props.modelValue }
           />
         </div>
